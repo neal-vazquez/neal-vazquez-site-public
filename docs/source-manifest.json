@@ -1,0 +1,302 @@
+{
+  "captured_on": "2026-09-07",
+  "source_release": "Sites v94",
+  "dialect": "SQLite",
+  "migrations": [
+    {
+      "path": "sql/migrations/0000_wise_xorn.sql",
+      "sha256": "483142c5d6da143925b4e131c9f0dbbaf541fa68954f904d0ec652c412ff5a32"
+    },
+    {
+      "path": "sql/migrations/0001_blue_multiple_man.sql",
+      "sha256": "51901893ef62a4d1f0c20d425430146a8be2ddf1ad106f94b5d3f3500fee3a52"
+    },
+    {
+      "path": "sql/migrations/0002_clear_forge.sql",
+      "sha256": "81f52aaef6cb67612c5e78cae394702f4e6bbc1797d6a39b08a6f14a7e38a06e"
+    },
+    {
+      "path": "sql/migrations/0003_left_redwing.sql",
+      "sha256": "d93da8602df2a4032309a4d9e61fef39bd94acaaf07461113262085ad4f925f4"
+    },
+    {
+      "path": "sql/migrations/0004_violet_doctor_doom.sql",
+      "sha256": "d3c1754771f1cf01f6ca932c55edb1f1c211e8bc19637a78f66e97ffa52cc7fc"
+    }
+  ],
+  "queries": [
+    {
+      "name": "record_event",
+      "path": "sql/runtime/record_event.sql",
+      "source_path": "db/portfolio-events.ts",
+      "source_line": 13,
+      "purpose": "Deduplicate event ingestion by event ID.",
+      "parameters": [
+        "event_id",
+        "event_name",
+        "path",
+        "location",
+        "parameters_json",
+        "session_id",
+        "occurred_at",
+        "source"
+      ],
+      "literal_sha256": "44156323f356adaf526d7a67e84e139da01a0e84b0182ccf004a523af7fc5395"
+    },
+    {
+      "name": "prune_analytics_events",
+      "path": "sql/runtime/prune_analytics_events.sql",
+      "source_path": "db/portfolio-events.ts",
+      "source_line": 33,
+      "purpose": "Remove at most 100 raw records older than 180 days; keep daily totals.",
+      "parameters": [],
+      "literal_sha256": "a7f48e57f6f432f0334f2be62cfdb177acec110e1d43e43c7ae50e8fc8cb75e9"
+    },
+    {
+      "name": "prune_analytics_limits",
+      "path": "sql/runtime/prune_analytics_limits.sql",
+      "source_path": "db/portfolio-events.ts",
+      "source_line": 34,
+      "purpose": "Remove at most 100 expired analytics counters.",
+      "parameters": [
+        "now_epoch_seconds"
+      ],
+      "literal_sha256": "4350c4dd0fede8da9f6d9d8e3ca8100cbae7afc4dba9b6263cd90804209c68c0"
+    },
+    {
+      "name": "reserve_analytics_quota",
+      "path": "sql/runtime/reserve_analytics_quota.sql",
+      "source_path": "db/portfolio-events.ts",
+      "source_line": 45,
+      "purpose": "Atomically increment a bounded request counter.",
+      "parameters": [
+        "bucket_id",
+        "expires_at_seconds",
+        "maximum"
+      ],
+      "literal_sha256": "70aa94c29add1d890bc42424eba5685d3d223f3807e499cef38463c5302f7416"
+    },
+    {
+      "name": "daily_activity",
+      "path": "sql/runtime/daily_activity.sql",
+      "source_path": "db/portfolio-events.ts",
+      "source_line": 71,
+      "purpose": "Combine legacy event counts and current daily rollups.",
+      "parameters": [
+        "start_sql_timestamp",
+        "start_date"
+      ],
+      "literal_sha256": "89fc88c6d1d177fbce983dc13ede446397928c2270c01287952c77c6e59f7543"
+    },
+    {
+      "name": "location_rankings",
+      "path": "sql/runtime/location_rankings.sql",
+      "source_path": "db/portfolio-events.ts",
+      "source_line": 75,
+      "purpose": "Rank meaningful page areas and exclude chat/operational events.",
+      "parameters": [
+        "start_sql_timestamp",
+        "start_date"
+      ],
+      "literal_sha256": "f9f6335e786eec2c37d756f350020eae9482a71a0f39aa7d6caea8132a15afba"
+    },
+    {
+      "name": "page_rankings",
+      "path": "sql/runtime/page_rankings.sql",
+      "source_path": "db/portfolio-events.ts",
+      "source_line": 79,
+      "purpose": "Rank page views across legacy and current browser events.",
+      "parameters": [
+        "start_sql_timestamp",
+        "start_sql_timestamp"
+      ],
+      "literal_sha256": "6373ee9d019da05e2f12677c8ca88a7dd769e888f39e8418f2849a91ff1bd7ee"
+    },
+    {
+      "name": "chat_engagement",
+      "path": "sql/runtime/chat_engagement.sql",
+      "source_path": "db/chat-engagement.ts",
+      "source_line": 20,
+      "purpose": "Aggregate chat actions with allowlisted JSON device, page and topic dimensions.",
+      "parameters": [
+        "start_sql_timestamp",
+        "start_iso_timestamp",
+        "end_iso_timestamp"
+      ],
+      "literal_sha256": "984fcfe856951c1688ca5ca82c5d626516eab8ae7af0266b57270c9aa6cdada7"
+    },
+    {
+      "name": "prune_chat_sessions",
+      "path": "sql/runtime/prune_chat_sessions.sql",
+      "source_path": "db/chat.ts",
+      "source_line": 17,
+      "purpose": "Delete at most 100 expired sessions.",
+      "parameters": [
+        "now_epoch_seconds"
+      ],
+      "literal_sha256": "1e04600c3e6c16061ec0e1d0d787c3ae7a6bca2ba3fc2e3167504abc5bf387fd"
+    },
+    {
+      "name": "prune_chat_usage",
+      "path": "sql/runtime/prune_chat_usage.sql",
+      "source_path": "db/chat.ts",
+      "source_line": 18,
+      "purpose": "Delete at most 100 expired usage buckets.",
+      "parameters": [
+        "now_epoch_seconds"
+      ],
+      "literal_sha256": "a607d25266233b8c5083069f3c947e2a73c11068ee4f7e8d4dc0bb6c4b98523d"
+    },
+    {
+      "name": "reserve_chat_quota",
+      "path": "sql/runtime/reserve_chat_quota.sql",
+      "source_path": "db/chat.ts",
+      "source_line": 22,
+      "purpose": "Atomically reserve a unit below a caller-supplied cap.",
+      "parameters": [
+        "bucket_id",
+        "expires_at_seconds",
+        "maximum"
+      ],
+      "literal_sha256": "90b959bd54e19448becdb2b808a82b24aaca5dbc24de1479d4d2a4572d182441"
+    },
+    {
+      "name": "budget_status",
+      "path": "sql/runtime/budget_status.sql",
+      "source_path": "db/chat.ts",
+      "source_line": 41,
+      "purpose": "Check an active breaker and three independent budget caps.",
+      "parameters": [
+        "breaker_id",
+        "now_epoch_seconds",
+        "lifetime_id",
+        "lifetime_max",
+        "month_id",
+        "month_max",
+        "day_id",
+        "day_max"
+      ],
+      "literal_sha256": "5dc14327b5fe2f8b12833c7245f7e2974d12f70435affe3bc421a6e533bc6d9b"
+    },
+    {
+      "name": "extend_breaker",
+      "path": "sql/runtime/extend_breaker.sql",
+      "source_path": "db/chat.ts",
+      "source_line": 52,
+      "purpose": "Extend an expiry without shortening an existing pause.",
+      "parameters": [
+        "breaker_id",
+        "expires_at_seconds"
+      ],
+      "literal_sha256": "1f66c8ce59bc9d4662b9836f6d1fde0808ecb27da2ac4f1f140f01ba05180cd0"
+    },
+    {
+      "name": "read_active_session",
+      "path": "sql/runtime/read_active_session.sql",
+      "source_path": "app/api/chat/route.ts",
+      "source_line": 18,
+      "purpose": "Retrieve a session only while its expiry is in the future.",
+      "parameters": [
+        "session_id",
+        "now_epoch_seconds"
+      ],
+      "literal_sha256": "d6ee29ccc28fc7331cd56e419d37d724d20df6ce392437a9e5b79d2c6ec0b3f6"
+    },
+    {
+      "name": "delete_session",
+      "path": "sql/runtime/delete_session.sql",
+      "source_path": "app/api/chat/route.ts",
+      "source_line": 34,
+      "purpose": "Delete one session by its opaque identifier.",
+      "parameters": [
+        "session_id"
+      ],
+      "literal_sha256": "627406adf98ad640de37c91a1565a50be7375bc7a19a5b29a46c6b2d82ad2127"
+    },
+    {
+      "name": "create_session",
+      "path": "sql/runtime/create_session.sql",
+      "source_path": "app/api/chat/route.ts",
+      "source_line": 60,
+      "purpose": "Create an empty session with an explicit expiry.",
+      "parameters": [
+        "session_id",
+        "expires_at_seconds"
+      ],
+      "literal_sha256": "dfcd8738c05292ec2fd3c8dfa18122ce9f5a4cae55680929cb3a7d7e75b5e13d"
+    },
+    {
+      "name": "acquire_session_lock",
+      "path": "sql/runtime/acquire_session_lock.sql",
+      "source_path": "app/api/chat/route.ts",
+      "source_line": 64,
+      "purpose": "Reserve an unlocked session while the turn cap permits.",
+      "parameters": [
+        "lock_until_seconds",
+        "session_id",
+        "now_epoch_seconds",
+        "maximum_turns"
+      ],
+      "literal_sha256": "57102dedd7f655104ad1f34b7328e3a24f320bed7820c76d9f514eb84db5074f"
+    },
+    {
+      "name": "read_session",
+      "path": "sql/runtime/read_session.sql",
+      "source_path": "app/api/chat/route.ts",
+      "source_line": 68,
+      "purpose": "Read session state after acquiring the lease.",
+      "parameters": [
+        "session_id"
+      ],
+      "literal_sha256": "57eb6d389b07054464ec37f374e3ddb5e09aac322bfa9b3fc4cc8a67a65f5060"
+    },
+    {
+      "name": "save_session_turn",
+      "path": "sql/runtime/save_session_turn.sql",
+      "source_path": "app/api/chat/route.ts",
+      "source_line": 89,
+      "purpose": "Save JSON messages, increment turns and release the lease.",
+      "parameters": [
+        "messages_json",
+        "session_id"
+      ],
+      "literal_sha256": "e24dd4ae674de0b2e04d9e673947a519630ed812d8dcf52b988add537d8a7c95"
+    },
+    {
+      "name": "release_session_lock",
+      "path": "sql/runtime/release_session_lock.sql",
+      "source_path": "app/api/chat/route.ts",
+      "source_line": 94,
+      "purpose": "Release a session lease after an error or completion.",
+      "parameters": [
+        "session_id"
+      ],
+      "literal_sha256": "c29e173e3c94c16b02a768ecd5f736dcf33c0c83dd4ccbf1c064fcdf0030ae79"
+    },
+    {
+      "name": "read_cache",
+      "path": "sql/runtime/read_cache.sql",
+      "source_path": "lib/github-source.ts",
+      "source_line": 67,
+      "purpose": "Read a shared cache record for caller-side validation.",
+      "parameters": [
+        "cache_owner"
+      ],
+      "literal_sha256": "1316939ed0bd2a307c633d96a8552e2f24e69640710c57a8b21c3ae416fe25bb"
+    },
+    {
+      "name": "upsert_cache",
+      "path": "sql/runtime/upsert_cache.sql",
+      "source_path": "lib/github-source.ts",
+      "source_line": 81,
+      "purpose": "Reject older cache writes using a conditional UPSERT.",
+      "parameters": [
+        "cache_owner",
+        "cache_key",
+        "record_json",
+        "updated_at_milliseconds"
+      ],
+      "literal_sha256": "5940d2d923be1bbef0e0d35158e9cb5a60c4dd3d930771e907b317ec6978c958"
+    }
+  ]
+}
