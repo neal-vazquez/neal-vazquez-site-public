@@ -1,4 +1,6 @@
 import sys
+import hashlib
+import json
 from pathlib import Path
 import unittest
 
@@ -13,6 +15,18 @@ class SQLBehaviorTests(unittest.TestCase):
 
     def test_all_runtime_statements_execute(self):
         self.assertEqual(smoke_runtime(),22)
+
+    def test_historical_source_hashes_are_preserved(self):
+        manifest = json.loads(sql('docs/source-manifest.json'))
+        for item in manifest['migrations']:
+            with self.subTest(path=item['path']):
+                path = Path(__file__).resolve().parents[1] / item['path']
+                self.assertEqual(hashlib.sha256(path.read_bytes()).hexdigest(), item['sha256'])
+        for item in manifest['queries']:
+            with self.subTest(path=item['path']):
+                literal = '\n'.join(line for line in sql(item['path']).splitlines()
+                                    if not line.startswith('--')).strip().removesuffix(';')
+                self.assertEqual(hashlib.sha256(literal.encode()).hexdigest(), item['literal_sha256'])
 
     def test_replay_is_idempotent_and_server_events_do_not_roll_up(self):
         self.assertEqual(self.db.execute('SELECT COUNT(*) FROM analytics_events').fetchone()[0],17)

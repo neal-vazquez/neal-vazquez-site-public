@@ -1,10 +1,23 @@
-# SQL behind neal-vazquez.com
+# SQL portfolio: operational analytics and data integrity
 
 [![SQL checks](https://github.com/neal-vazquez/neal-vazquez-site-public/actions/workflows/sql.yml/badge.svg)](https://github.com/neal-vazquez/neal-vazquez-site-public/actions/workflows/sql.yml)
 
-**A working SQL case study from my own website: event ingestion, analytics, operational controls, and data integrity.**
+**Runnable SQL case studies by Neal Vazquez: website measurement, data integrity, and contact-center operations.**
 
-This repository makes the SQL developed for [neal-vazquez.com](https://neal-vazquez.com) inspectable and runnable. It contains **five schema migrations and all 22 embedded SQL statements in the accepted Sites v94 source**, captured September 7, 2026. The queries use SQLite, which also underlies the site's Cloudflare D1 database.
+Two review paths, both runnable locally with Python and SQLite:
+
+| Start with | What it demonstrates | Run it |
+| --- | --- | --- |
+| [Contact-center case study](examples/contact-center/README.md) | AHT, first-contact resolution, repeat-contact windows, missing data, and a business interpretation | `python scripts/contact_center.py` |
+| [Website SQL](docs/query-catalog.md) | Event ingestion, daily trends, reconciliation, deduplication, and conditional writes | `python scripts/demo.py` |
+
+**Five-minute review:** read the [contact-center findings and metric definitions](examples/contact-center/README.md), inspect the [CTEs and window function](examples/contact-center/queue_metrics.sql), then review the [boundary tests](tests/test_contact_center.py). For production-derived SQL, start with [event ingestion](sql/runtime/record_event.sql) and [rollup reconciliation](sql/analysis/rollup_reconciliation.sql).
+
+[Professional background](https://neal-vazquez.com/consulting/resume) · [Website](https://neal-vazquez.com) · [All projects](https://github.com/neal-vazquez)
+
+## Website case study
+
+This repository makes the SQL developed for [neal-vazquez.com](https://neal-vazquez.com) inspectable and runnable. It preserves **five schema migrations and all 22 embedded SQL statements from Sites v94**, captured September 7, 2026. This historical snapshot does not describe the current website's schema or retention policy. The queries use SQLite, the SQL engine underlying Cloudflare D1.
 
 The question driving the work: how do you turn repeatable website actions into useful counts while preserving historical totals, avoiding duplicate events, and keeping database operations bounded?
 
@@ -17,12 +30,13 @@ git clone https://github.com/neal-vazquez/neal-vazquez-site-public.git
 cd neal-vazquez-site-public
 python scripts/demo.py
 python scripts/demo.py --check
+python scripts/contact_center.py
 python -m unittest discover -s tests -v
 ```
 
 Use Python 3.10+ linked to SQLite 3.35+ with JSON functions. The runner checks SQLite and JSON support. CI uses Python 3.12. No package installation is required.
 
-The first command prints three reports. The second executes every extracted runtime statement on an isolated fixture database and checks expected totals. The tests exercise failure and boundary cases.
+The website demo prints three reports. Its `--check` mode executes every extracted runtime statement on an isolated fixture database and checks expected totals. The contact-center demo prints a separate queue-level report. The tests exercise failure and boundary cases and verify the historical SQL against the source hashes.
 
 ## What to inspect
 
@@ -68,7 +82,8 @@ The first six means use the available prefix, not an assumed full seven-day hist
 | `sql/analysis/` | Three new analytical exercises over the same schema; these are not production features |
 | `fixtures/` | Invented events, an empty synthetic session, and a synthetic cache record |
 | `scripts/` | Local in-memory demo and statement execution checks |
-| `tests/` | Twelve behavioral tests |
+| `examples/contact-center/` | Standalone synthetic operations case study, schema, fixture, query, and interpretation |
+| `tests/` | Website behavior, source-integrity checks, and contact-center metric boundary tests |
 | `docs/` | Query bindings, data semantics, design decisions, and source hashes |
 
 This is a snapshot of the accepted website implementation, not an automatic synchronization service or a full website source distribution. Retired historical branches, deployment code, credentials, database contents, and provider orchestration are outside this SQL collection. The site remains separately maintained.
@@ -78,5 +93,7 @@ Read [data semantics and limitations](docs/data-semantics.md), [design decisions
 ## Authorship
 
 Project direction, measurement requirements, and review: **Neal Vazquez**. SQL, documentation, and validation were developed collaboratively with ChatGPT. The extracted statements come from that website work; portfolio exercises are identified separately.
+
+The contact-center example was added September 16, 2026 as a synthetic portfolio exercise. Its data and results are invented for demonstration; they are not client outcomes, an employer dataset, or a production deployment.
 
 [Explore the website](https://neal-vazquez.com) · [More projects](https://github.com/neal-vazquez)

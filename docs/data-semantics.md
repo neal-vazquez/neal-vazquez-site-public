@@ -1,5 +1,7 @@
 # Data semantics and limits
 
+This document describes the September 7, 2026 website SQL snapshot, including its historical session storage. It is not the current website's privacy or retention policy. The separate [contact-center exercise](../examples/contact-center/README.md) defines its own metric contract and uses only synthetic data.
+
 ## Table grains
 
 | Table | Grain | Time representation | Purpose |
