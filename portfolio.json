@@ -1,38 +1,20 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "repository": "https://github.com/neal-vazquez/neal-vazquez-site-public",
   "updatedAt": "2026-09-17",
   "collections": [
     {
       "id": "consulting-career",
       "title": "Consulting & Career Services",
-      "description": "Runnable analytics, practical measurement, and academic research.",
+      "description": "Runnable analytics, practical measurement, and career services.",
       "website": "/consulting",
-      "path": "consulting-career",
+      "path": "business/consulting-career",
       "projects": [
         {
           "id": "sql-and-analytics",
           "title": "SQL & analytics",
           "description": "Synthetic case studies in contact-center measurement, event rollups, and data integrity.",
-          "path": "consulting-career/sql-and-analytics"
-        },
-        {
-          "id": "academic",
-          "title": "Academic research",
-          "description": "ALBERT experiments and UC Berkeley coursework, with original notebooks and reports.",
-          "path": "consulting-career/academic",
-          "children": [
-            {
-              "id": "albert-sentiment",
-              "title": "ALBERT sentiment classification",
-              "path": "consulting-career/academic/albert-sentiment"
-            },
-            {
-              "id": "berkeley",
-              "title": "UC Berkeley · DATASCI 266",
-              "path": "consulting-career/academic/berkeley"
-            }
-          ]
+          "path": "business/consulting-career/sql-and-analytics"
         }
       ]
     },
@@ -41,12 +23,12 @@
       "title": "Writing",
       "description": "Questions Worth Asking and the research behind the writing.",
       "website": "/writing",
-      "path": "writing",
+      "path": "business/writing",
       "projects": [
         {
           "id": "qwa",
           "title": "Questions Worth Asking Lab",
-          "path": "writing",
+          "path": "business/writing",
           "source": "https://github.com/neal-vazquez/questions-worth-asking-lab"
         }
       ]
@@ -56,12 +38,12 @@
       "title": "Art",
       "description": "The Mio Collection: human-created digital artwork.",
       "website": "/art",
-      "path": "art",
+      "path": "business/art",
       "projects": [
         {
           "id": "mio-collection",
           "title": "The Mio Collection",
-          "path": "art",
+          "path": "business/art",
           "website": "/art"
         }
       ]
@@ -71,37 +53,37 @@
       "title": "Gaming",
       "description": "Third Strike, DDR, Smash, and game development with mio.",
       "website": "/play",
-      "path": "gaming",
+      "path": "business/gaming",
       "projects": [
         {
           "id": "third-strike",
           "title": "Street Fighter III: 3rd Strike",
-          "path": "gaming/third-strike",
+          "path": "business/gaming/third-strike",
           "website": "/play/3rd-strike"
         },
         {
           "id": "ddr",
           "title": "Dance Dance Revolution",
-          "path": "gaming/ddr",
+          "path": "business/gaming/ddr",
           "website": "/play/ddr",
           "source": "https://github.com/neal-vazquez/skill-attack-points-over-time"
         },
         {
           "id": "smash",
           "title": "Super Smash Bros.",
-          "path": "gaming/smash",
+          "path": "business/gaming/smash",
           "website": "/play/smash",
           "children": [
             {
               "id": "melee",
               "title": "Melee",
-              "path": "gaming/smash/melee",
+              "path": "business/gaming/smash/melee",
               "website": "/play/melee"
             },
             {
               "id": "ultimate",
               "title": "Ultimate",
-              "path": "gaming/smash/ultimate",
+              "path": "business/gaming/smash/ultimate",
               "website": "/play/ultimate"
             }
           ]
@@ -109,7 +91,7 @@
         {
           "id": "game-development",
           "title": "Game development",
-          "path": "gaming/game-development",
+          "path": "business/gaming/game-development",
           "website": "/play/services"
         }
       ]
@@ -120,7 +102,69 @@
       "id": "social-media",
       "title": "Social media & measurement",
       "description": "Shared measurement methods and public examples across all four practices.",
-      "path": "social-media"
+      "path": "business/social-media"
     }
-  ]
+  ],
+  "pillars": [
+    {
+      "id": "personal",
+      "title": "Personal",
+      "path": "personal"
+    },
+    {
+      "id": "business",
+      "title": "Business",
+      "path": "business"
+    },
+    {
+      "id": "berkeley-education",
+      "title": "Berkeley & Education",
+      "path": "berkeley-education"
+    },
+    {
+      "id": "control",
+      "title": "Control",
+      "path": "control"
+    }
+  ],
+  "education": [
+    {
+      "id": "academic",
+      "title": "Academic research",
+      "description": "ALBERT experiments and UC Berkeley coursework, with original notebooks and reports.",
+      "path": "berkeley-education",
+      "children": [
+        {
+          "id": "albert-sentiment",
+          "title": "ALBERT sentiment classification",
+          "path": "berkeley-education/albert-sentiment"
+        },
+        {
+          "id": "berkeley",
+          "title": "UC Berkeley · DATASCI 266",
+          "path": "berkeley-education/berkeley"
+        }
+      ]
+    }
+  ],
+  "legacyPaths": {
+    "art": "business/art",
+    "consulting-career": "business/consulting-career",
+    "consulting-career/academic": "berkeley-education",
+    "consulting-career/academic/albert-sentiment": "berkeley-education/albert-sentiment",
+    "consulting-career/academic/berkeley": "berkeley-education/berkeley",
+    "consulting-career/academic/berkeley/albert-hate-speech": "berkeley-education/berkeley/albert-hate-speech",
+    "consulting-career/sql-and-analytics": "business/consulting-career/sql-and-analytics",
+    "consulting-career/sql-and-analytics/examples/contact-center": "business/consulting-career/sql-and-analytics/examples/contact-center",
+    "consulting-career/sql-and-analytics/notebooks": "business/consulting-career/sql-and-analytics/notebooks",
+    "gaming": "business/gaming",
+    "gaming/ddr": "business/gaming/ddr",
+    "gaming/game-development": "business/gaming/game-development",
+    "gaming/smash": "business/gaming/smash",
+    "gaming/smash/melee": "business/gaming/smash/melee",
+    "gaming/smash/ultimate": "business/gaming/smash/ultimate",
+    "gaming/third-strike": "business/gaming/third-strike",
+    "social-media": "business/social-media",
+    "writing": "business/writing"
+  }
 }

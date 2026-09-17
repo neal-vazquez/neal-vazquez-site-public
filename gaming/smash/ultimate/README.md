@@ -1,7 +1,5 @@
-# Super Smash Bros. Ultimate
+# This collection has moved
 
-[Ultimate on the website](https://neal-vazquez.com/play/ultimate)
+Continue at [business/gaming/smash/ultimate](../../../business/gaming/smash/ultimate/).
 
-Ultimate-specific work lives under Smash. Published features and availability are described on the website; this directory does not claim a separate released product.
-
-[Smash](../) · [Gaming](../../)
+This small compatibility page preserves existing website and repository links. The current source and navigation live at the destination above.

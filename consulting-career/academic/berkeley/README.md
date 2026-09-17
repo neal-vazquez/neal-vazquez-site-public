@@ -1,5 +1,5 @@
-# UC Berkeley
+# This collection has moved
 
-[DATASCI 266: hate-speech classification with ALBERT](albert-hate-speech/) contains the Fall 2023 team report and recorded notebook. Team: Cynthia Rosales and Neal Vazquez.
+Continue at [berkeley-education/berkeley](../../../berkeley-education/berkeley/).
 
-[All academic research](../)
+This small compatibility page preserves existing website and repository links. The current source and navigation live at the destination above.

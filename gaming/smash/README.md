@@ -1,9 +1,5 @@
-# Super Smash Bros.
+# This collection has moved
 
-Two games, organized together.
+Continue at [business/gaming/smash](../../business/gaming/smash/).
 
-- [Melee](melee/)
-- [Ultimate](ultimate/)
-- [Smash on the website](https://neal-vazquez.com/play/smash)
-
-[Gaming](../)
+This small compatibility page preserves existing website and repository links. The current source and navigation live at the destination above.

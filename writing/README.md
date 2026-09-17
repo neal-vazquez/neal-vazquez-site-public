@@ -1,10 +1,5 @@
-# Writing
+# This collection has moved
 
-**Questions Worth Asking** is the writing home. The public lab contains shareable experiments and research tooling.
+Continue at [business/writing](../business/writing/).
 
-- [Writing on the website](https://neal-vazquez.com/writing)
-- [Questions Worth Asking Lab](https://github.com/neal-vazquez/questions-worth-asking-lab)
-
-Published work and reusable public experiments belong here. Draft manuscripts and editorial work remain private; the protected master is maintained separately.
-
-[All projects](../)
+This small compatibility page preserves existing website and repository links. The current source and navigation live at the destination above.

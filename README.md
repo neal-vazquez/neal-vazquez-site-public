@@ -1,33 +1,29 @@
-# Neal Vazquez · Projects
+# Neal Vazquez · Personal, Business & Education
 
-Data, words, art, and games. Four connected practices, with room to explore the work behind each.
+Data, words, art, games, and the learning behind them.
 
-[Website](https://neal-vazquez.com) · [Professional background](https://neal-vazquez.com/consulting/resume) · [GitHub](https://github.com/neal-vazquez)
+[Website](https://neal-vazquez.com) · [Professional background](https://neal-vazquez.com/consulting/resume)
 
-| Practice | Explore |
+| Pillar | Explore |
 | --- | --- |
-| **[Consulting & Career Services](consulting-career/)** | Runnable SQL case studies, contact-center measurement, and academic machine-learning research |
-| **[Writing](writing/)** | Questions Worth Asking and its public research lab |
-| **[Art](art/)** | The Mio Collection, human-created digital artwork |
-| **[Gaming](gaming/)** | Third Strike, DDR, Smash, and game development |
+| **[Personal](personal/)** | Public background, interests, and personal information boundaries |
+| **[Business](business/)** | Consulting & Career Services, Writing, Art, and Gaming, with shared operations |
+| **[Berkeley & Education](berkeley-education/)** | UC Berkeley coursework and ALBERT research, with original artifacts and attribution |
+| **[Control](control/)** | Structure, publication boundaries, and verification |
 
-[Social media & measurement](social-media/) connects the four practices through the website.
+## Business
+
+[Consulting & Career Services](business/consulting-career/) · [Writing](business/writing/) · [Art](business/art/) · [Gaming](business/gaming/)
+
+Gaming contains [Third Strike](business/gaming/third-strike/), [DDR](business/gaming/ddr/), [Smash](business/gaming/smash/) ([Melee](business/gaming/smash/melee/) and [Ultimate](business/gaming/smash/ultimate/)), and [game development](business/gaming/game-development/). [Social media & measurement](business/social-media/) serves all four business lines.
 
 ## Start with the work
 
-- **[SQL & analytics](consulting-career/sql-and-analytics/):** run synthetic case studies in Python and SQLite, including average handle time, first-contact resolution, event rollups, and data-integrity checks.
-- **[Academic research](consulting-career/academic/):** ALBERT sentiment classification and the UC Berkeley DATASCI 266 team project, with original notebooks, report, evaluation limitations, and attribution.
-- **[Open Source DDR Software](gaming/ddr/):** free, MIT-licensed software for the DDR community, maintained in its established public repository.
-- **[Questions Worth Asking Lab](writing/):** public experiments connecting technology, inquiry, and writing.
+- [SQL & analytics](business/consulting-career/sql-and-analytics/): runnable Python/SQLite case studies using synthetic data.
+- [Berkeley & Education](berkeley-education/): original notebooks, report, evaluation limitations, and source provenance.
+- [Open Source DDR Software](business/gaming/ddr/): free, public MIT-licensed community software in its established repository.
+- [Questions Worth Asking](business/writing/): published writing and the public research lab.
 
-## Explore Gaming
+The public and private workspaces share the [same category structure](structure.json). Their contents differ deliberately: public material is selected for publication, while personal records, customer data, credentials, manuscripts, and internal operations remain private. Dedicated writing and DDR repositories retain their established source and history.
 
-[Third Strike](gaming/third-strike/) · [DDR](gaming/ddr/) · [Smash](gaming/smash/) ([Melee](gaming/smash/melee/) / [Ultimate](gaming/smash/ultimate/)) · [Game development](gaming/game-development/)
-
-## About this collection
-
-This repository is the public project index and home for the consolidated SQL and academic collections. Dedicated products retain their established repositories and links. Some sections are guides to published work rather than standalone software packages.
-
-The public and private workspaces use matching categories. Publication is a deliberate selection of shareable work, never a bidirectional copy of private plans, customer data, credentials, manuscripts, or internal operations.
-
-Licenses and attribution belong to each project. The ALBERT sentiment project retains GPL-3.0; the DDR project retains MIT in its own repository. No new blanket license is applied to coursework, writing, art, or third-party material. Academic originals and source revisions are recorded in the [import manifest](consulting-career/academic/import-manifest.json).
+Licenses belong to each project. ALBERT sentiment retains GPL-3.0; DDR retains MIT. No blanket license is applied to coursework, writing, art, or third-party material. [Academic provenance](berkeley-education/import-manifest.json) records the preserved originals. Older directory URLs contain relocation pages for existing links.

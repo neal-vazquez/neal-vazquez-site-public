@@ -1,7 +1,5 @@
-# Super Smash Bros. Melee
+# This collection has moved
 
-[Melee on the website](https://neal-vazquez.com/play/melee)
+Continue at [business/gaming/smash/melee](../../../business/gaming/smash/melee/).
 
-Melee-specific work lives under Smash. Published features and availability are described on the website; this directory does not claim a separate released product.
-
-[Smash](../) · [Gaming](../../)
+This small compatibility page preserves existing website and repository links. The current source and navigation live at the destination above.
