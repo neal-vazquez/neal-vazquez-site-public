@@ -86,6 +86,26 @@ class ContactCenterTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             report(self.db, {**PARAMS, 'end_at': '2026-09-17 00:00:00'})
 
+    def test_invalid_calendar_and_noncanonical_parameters_are_rejected(self):
+        for key in PARAMS:
+            for value in ('2026-99-99 00:00:00', '2026-02-29 00:00:00',
+                          '2026-09-01 24:00:00', '2026-9-1 00:00:00',
+                          '2026-09-01T00:00:00Z', '', None, 123):
+                with self.subTest(key=key, value=value), self.assertRaises(ValueError):
+                    report(self.db, {**PARAMS, key: value})
+            missing = dict(PARAMS)
+            del missing[key]
+            with self.subTest(missing=key), self.assertRaises(ValueError):
+                report(self.db, missing)
+        with self.assertRaises(ValueError):
+            report(self.db, [])
+
+    def test_valid_leap_day_is_accepted(self):
+        result = report(self.db, {'start_at': '2024-02-29 00:00:00',
+                                'end_at': '2024-03-01 00:00:00',
+                                'as_of': '2024-03-08 00:00:00'})
+        self.assertEqual(result, [])
+
 
 if __name__ == '__main__':
     unittest.main()
