@@ -78,8 +78,6 @@ This limitation is documented deliberately. Technical credibility comes from mak
 
 ## Reproduce the notebook
 
-**Security status:** the historical compatibility requirements include `transformers==4.30.2`, a version with [published security advisories](https://github.com/advisories/GHSA-3863-2447-669p). These pins are preserved as research provenance, not a supported secure environment. Prefer reading the saved outputs. If you rerun the original environment, use a disposable VM or container with no credentials, mounted personal files, or production access; a Python virtual environment alone is not a security sandbox. Review and test current patched dependencies separately before adapting this work. Treat downloaded model files as executable inputs; follow the [PyTorch security policy](https://github.com/pytorch/pytorch/security/policy) and [Transformers security policy](https://github.com/huggingface/transformers/security/policy).
-
 The dataset is not redistributed in this repository.
 
 1. Use Python 3.10 or 3.11.
