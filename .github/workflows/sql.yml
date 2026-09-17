@@ -5,6 +5,9 @@ permissions:
 jobs:
   sqlite:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: consulting-career/sql-and-analytics
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
@@ -12,5 +15,7 @@ jobs:
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
         with:
           python-version: '3.12'
+      - run: python scripts/verify_portfolio.py
+        working-directory: .
       - run: python scripts/demo.py --check
       - run: python -m unittest discover -s tests -v

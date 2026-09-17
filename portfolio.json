@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "repository": "https://github.com/neal-vazquez/neal-vazquez-site-public",
+  "updatedAt": "2026-09-17",
+  "collections": [
+    {
+      "id": "consulting-career",
+      "title": "Consulting & Career Services",
+      "description": "Runnable analytics, practical measurement, and academic research.",
+      "website": "/consulting",
+      "path": "consulting-career",
+      "projects": [
+        {
+          "id": "sql-and-analytics",
+          "title": "SQL & analytics",
+          "description": "Synthetic case studies in contact-center measurement, event rollups, and data integrity.",
+          "path": "consulting-career/sql-and-analytics"
+        },
+        {
+          "id": "academic",
+          "title": "Academic research",
+          "description": "ALBERT experiments and UC Berkeley coursework, with original notebooks and reports.",
+          "path": "consulting-career/academic",
+          "children": [
+            {
+              "id": "albert-sentiment",
+              "title": "ALBERT sentiment classification",
+              "path": "consulting-career/academic/albert-sentiment"
+            },
+            {
+              "id": "berkeley",
+              "title": "UC Berkeley · DATASCI 266",
+              "path": "consulting-career/academic/berkeley"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "writing",
+      "title": "Writing",
+      "description": "Questions Worth Asking and the research behind the writing.",
+      "website": "/writing",
+      "path": "writing",
+      "projects": [
+        {
+          "id": "qwa",
+          "title": "Questions Worth Asking Lab",
+          "path": "writing",
+          "source": "https://github.com/neal-vazquez/questions-worth-asking-lab"
+        }
+      ]
+    },
+    {
+      "id": "art",
+      "title": "Art",
+      "description": "The Mio Collection: human-created digital artwork.",
+      "website": "/art",
+      "path": "art",
+      "projects": [
+        {
+          "id": "mio-collection",
+          "title": "The Mio Collection",
+          "path": "art",
+          "website": "/art"
+        }
+      ]
+    },
+    {
+      "id": "gaming",
+      "title": "Gaming",
+      "description": "Third Strike, DDR, Smash, and game development with mio.",
+      "website": "/play",
+      "path": "gaming",
+      "projects": [
+        {
+          "id": "third-strike",
+          "title": "Street Fighter III: 3rd Strike",
+          "path": "gaming/third-strike",
+          "website": "/play/3rd-strike"
+        },
+        {
+          "id": "ddr",
+          "title": "Dance Dance Revolution",
+          "path": "gaming/ddr",
+          "website": "/play/ddr",
+          "source": "https://github.com/neal-vazquez/skill-attack-points-over-time"
+        },
+        {
+          "id": "smash",
+          "title": "Super Smash Bros.",
+          "path": "gaming/smash",
+          "website": "/play/smash",
+          "children": [
+            {
+              "id": "melee",
+              "title": "Melee",
+              "path": "gaming/smash/melee",
+              "website": "/play/melee"
+            },
+            {
+              "id": "ultimate",
+              "title": "Ultimate",
+              "path": "gaming/smash/ultimate",
+              "website": "/play/ultimate"
+            }
+          ]
+        },
+        {
+          "id": "game-development",
+          "title": "Game development",
+          "path": "gaming/game-development",
+          "website": "/play/services"
+        }
+      ]
+    }
+  ],
+  "shared": [
+    {
+      "id": "social-media",
+      "title": "Social media & measurement",
+      "description": "Shared measurement methods and public examples across all four practices.",
+      "path": "social-media"
+    }
+  ]
+}
