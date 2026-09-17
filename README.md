@@ -4,16 +4,19 @@
 
 **Runnable SQL case studies by Neal Vazquez: website measurement, data integrity, and contact-center operations.**
 
-Two review paths, both runnable locally with Python and SQLite:
+Three review paths, all runnable locally with Python and SQLite:
 
 | Start with | What it demonstrates | Run it |
 | --- | --- | --- |
+| [Standalone notebook](notebooks/contact-center-metrics.ipynb) | Three SQL measurement traps, worked outputs, and executable checks | Open in Jupyter or import into Kaggle |
 | [Contact-center case study](examples/contact-center/README.md) | AHT, first-contact resolution, repeat-contact windows, missing data, and a business interpretation | `python scripts/contact_center.py` |
 | [Website SQL](docs/query-catalog.md) | Event ingestion, daily trends, reconciliation, deduplication, and conditional writes | `python scripts/demo.py` |
 
 **Five-minute review:** read the [contact-center findings and metric definitions](examples/contact-center/README.md), inspect the [CTEs and window function](examples/contact-center/queue_metrics.sql), then review the [boundary tests](tests/test_contact_center.py). For production-derived SQL, start with [event ingestion](sql/runtime/record_event.sql) and [rollup reconciliation](sql/analysis/rollup_reconciliation.sql).
 
 [Professional background](https://neal-vazquez.com/consulting/resume) · [Website](https://neal-vazquez.com) · [All projects](https://github.com/neal-vazquez)
+
+If these examples are useful, follow [Neal's GitHub work](https://github.com/neal-vazquez) for more reproducible analytics examples. For a correction, include the metric definition, a small synthetic example, and the expected result so it can become a regression check.
 
 ## Website case study
 
