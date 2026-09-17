@@ -4,6 +4,7 @@ The generated notebook uses Python's standard library. Kaggle/Jupyter provide
 the notebook interface; no data download, account secret, or GPU is required.
 """
 import argparse
+import ast
 import contextlib
 import io
 import json
@@ -68,6 +69,7 @@ def build():
     add('code', '''
         import json
         import sqlite3
+        from datetime import datetime
         from statistics import mean
 
         assert sqlite3.sqlite_version_info >= (3, 25, 0), 'SQLite window functions required'
@@ -114,11 +116,14 @@ def build():
         cannot establish an actual within-timestamp order.
     ''')
     add('code', 'METRICS_SQL = ' + repr((EXAMPLE / 'queue_metrics.sql').read_text(encoding='utf-8')) + '\nprint(METRICS_SQL)')
+    validator_module = (ROOT / 'scripts' / 'contact_center.py').read_text(encoding='utf-8')
+    validator_node = next(node for node in ast.parse(validator_module).body
+                          if isinstance(node, ast.FunctionDef) and node.name == 'validate_params')
+    add('code', ast.get_source_segment(validator_module, validator_node))
     add('code', '''
         def report(connection, params=None):
             params = PARAMS if params is None else params
-            if not params['start_at'] < params['end_at'] <= params['as_of']:
-                raise ValueError('Require start_at < end_at <= as_of in canonical UTC format')
+            validate_params(params)
             return [dict(row) for row in connection.execute(METRICS_SQL, params)]
 
         rows = report(db)
