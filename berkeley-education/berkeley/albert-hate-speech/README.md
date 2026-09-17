@@ -45,6 +45,8 @@ A stronger evaluation would fit learned preprocessing only on training data, use
 
 ## Reproduction status
 
+**Security status:** do not run the original installation or Drive-mount cells in an account-connected notebook without review. Inspect the saved outputs first. Any rerun should use a disposable environment without credentials, private Drive mounts, or production access, with reviewed patched dependencies and trusted model/data sources. A virtual environment alone does not isolate executable notebook or model code. See the [PyTorch security policy](https://github.com/pytorch/pytorch/security/policy) and [Transformers security policy](https://github.com/huggingface/transformers/security/policy).
+
 The original notebook targets Google Colab, mounts Google Drive, uses local dataset and FastText-vector paths, and includes unpinned installation cells. Exact historical package versions are not recorded in this repository. It should therefore be treated as a recorded research artifact, not a verified one-command installation.
 
 To inspect the work, open the PDF and notebook. Rerunning requires obtaining the source data and vectors, reviewing their terms, adjusting paths, and resolving a compatible environment. No retraining was performed for this documentation update.
