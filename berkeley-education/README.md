@@ -2,6 +2,8 @@
 
 One home for the ALBERT experiments and UC Berkeley coursework in this portfolio.
 
+**Before running a notebook:** read the [archive security notice](SECURITY.md). Historical dependency pins and install/Drive-mount cells are preserved as evidence, not maintained as secure deployment environments.
+
 | Project | Context | Read |
 | --- | --- | --- |
 | [ALBERT sentiment classification](albert-sentiment/) | Movie-review sentiment experiment; historical phrase-level split and its limitations | Notebook, model card, data card, GPL-3.0 license |
