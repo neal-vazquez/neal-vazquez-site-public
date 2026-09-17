@@ -6,7 +6,7 @@
     {
       "repository": "neal-vazquez/albert-binary-text-classification",
       "commit": "97b2ce91722dbb391c07c422e013e8549ed2a3a1",
-      "destination": "consulting-career/academic/albert-sentiment",
+      "destination": "berkeley-education/albert-sentiment",
       "files": [
         {
           "path": ".gitignore",
@@ -41,7 +41,7 @@
     {
       "repository": "neal-vazquez/albert-binary-text-classification-hate-speech",
       "commit": "202a8e45a22be6e0024a8a18722a3ba6a846a958",
-      "destination": "consulting-career/academic/berkeley/albert-hate-speech",
+      "destination": "berkeley-education/berkeley/albert-hate-speech",
       "files": [
         {
           "path": "Hate_Speech_Classification_Albert.ipynb",

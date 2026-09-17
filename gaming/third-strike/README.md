@@ -1,11 +1,5 @@
-# Street Fighter III: 3rd Strike
+# This collection has moved
 
-My #1 favorite video game of all time.
+Continue at [business/gaming/third-strike](../../business/gaming/third-strike/).
 
-- [Third Strike](https://neal-vazquez.com/play/3rd-strike)
-- [Recorded play and data](https://neal-vazquez.com/play/data/3rd-strike)
-- [Gaming services](https://neal-vazquez.com/play/services)
-
-This is the project home for Third Strike within the Gaming collection. Public links describe the available work; they do not imply a downloadable game, emulator, or renderer release.
-
-[Gaming](../)
+This small compatibility page preserves existing website and repository links. The current source and navigation live at the destination above.

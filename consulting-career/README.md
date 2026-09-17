@@ -1,10 +1,5 @@
-# Consulting & Career Services
+# This collection has moved
 
-Data science, measurement, research, and practical digital problem-solving.
+Continue at [business/consulting-career](../business/consulting-career/).
 
-| Collection | What to inspect |
-| --- | --- |
-| [SQL & analytics](sql-and-analytics/) | Runnable Python/SQLite examples, synthetic contact-center data, metric definitions, and boundary tests |
-| [Academic research](academic/) | ALBERT notebooks, the Berkeley team report, and documented evaluation limits |
-
-[Services](https://neal-vazquez.com/consulting) · [Résumé](https://neal-vazquez.com/consulting/resume) · [Project index](../)
+This small compatibility page preserves existing website and repository links. The current source and navigation live at the destination above.

@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 1,
+  "mirrorMode": "matching-navigation-with-curated-public-content",
+  "pillars": [
+    "personal",
+    "business",
+    "berkeley-education",
+    "control"
+  ],
+  "businessLines": [
+    "consulting-career",
+    "writing",
+    "art",
+    "gaming"
+  ],
+  "paths": [
+    {
+      "path": "personal",
+      "title": "Personal",
+      "kind": "pillar"
+    },
+    {
+      "path": "personal/context",
+      "title": "About & interests",
+      "kind": "section"
+    },
+    {
+      "path": "personal/cybersecurity",
+      "title": "Personal cybersecurity",
+      "kind": "section"
+    },
+    {
+      "path": "personal/finance",
+      "title": "Personal finance",
+      "kind": "section"
+    },
+    {
+      "path": "personal/legal",
+      "title": "Personal legal matters",
+      "kind": "section"
+    },
+    {
+      "path": "business",
+      "title": "Business",
+      "kind": "pillar"
+    },
+    {
+      "path": "business/consulting-career",
+      "title": "Consulting & Career Services",
+      "kind": "business-line"
+    },
+    {
+      "path": "business/consulting-career/sql-and-analytics",
+      "title": "SQL & analytics",
+      "kind": "project"
+    },
+    {
+      "path": "business/writing",
+      "title": "Writing",
+      "kind": "business-line"
+    },
+    {
+      "path": "business/art",
+      "title": "Art",
+      "kind": "business-line"
+    },
+    {
+      "path": "business/gaming",
+      "title": "Gaming",
+      "kind": "business-line"
+    },
+    {
+      "path": "business/gaming/third-strike",
+      "title": "Third Strike",
+      "kind": "project"
+    },
+    {
+      "path": "business/gaming/ddr",
+      "title": "DDR",
+      "kind": "project"
+    },
+    {
+      "path": "business/gaming/smash",
+      "title": "Smash",
+      "kind": "project"
+    },
+    {
+      "path": "business/gaming/smash/melee",
+      "title": "Melee",
+      "kind": "project"
+    },
+    {
+      "path": "business/gaming/smash/ultimate",
+      "title": "Ultimate",
+      "kind": "project"
+    },
+    {
+      "path": "business/gaming/game-development",
+      "title": "Game development",
+      "kind": "project"
+    },
+    {
+      "path": "business/social-media",
+      "title": "Social media & measurement",
+      "kind": "shared-service"
+    },
+    {
+      "path": "business/creator",
+      "title": "Creator strategy",
+      "kind": "shared-service"
+    },
+    {
+      "path": "business/commerce",
+      "title": "Commerce",
+      "kind": "shared-service"
+    },
+    {
+      "path": "business/cybersecurity",
+      "title": "Business cybersecurity",
+      "kind": "shared-service"
+    },
+    {
+      "path": "business/governance",
+      "title": "Governance",
+      "kind": "shared-service"
+    },
+    {
+      "path": "business/ip",
+      "title": "Intellectual property & licensing",
+      "kind": "shared-service"
+    },
+    {
+      "path": "business/operations",
+      "title": "Operations",
+      "kind": "shared-service"
+    },
+    {
+      "path": "berkeley-education",
+      "title": "Berkeley & Education",
+      "kind": "pillar"
+    },
+    {
+      "path": "berkeley-education/albert-sentiment",
+      "title": "ALBERT sentiment classification",
+      "kind": "project"
+    },
+    {
+      "path": "berkeley-education/berkeley",
+      "title": "UC Berkeley",
+      "kind": "section"
+    },
+    {
+      "path": "berkeley-education/berkeley/albert-hate-speech",
+      "title": "DATASCI 266: ALBERT hate-speech classification",
+      "kind": "project"
+    },
+    {
+      "path": "control",
+      "title": "Control",
+      "kind": "pillar"
+    }
+  ],
+  "publicationBoundary": "The same categories exist in both workspaces. Public pages contain deliberately published work or a boundary statement; private records and git history are never automatically exported."
+}
