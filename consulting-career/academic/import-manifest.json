@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "importedAt": "2026-09-17",
+  "method": "Exact default-branch snapshots; original repository histories retained. No model retraining.",
+  "projects": [
+    {
+      "repository": "neal-vazquez/albert-binary-text-classification",
+      "commit": "97b2ce91722dbb391c07c422e013e8549ed2a3a1",
+      "destination": "consulting-career/academic/albert-sentiment",
+      "files": [
+        {
+          "path": ".gitignore",
+          "sha256": "fe97733f8fb407dd8d1b4f90c14eedc26312491882dd320f687fca1b3eae67cc"
+        },
+        {
+          "path": "DATA_CARD.md",
+          "sha256": "6249c0725b7b466cb2ba4e1257973932511f45b5563b8fc2d7844d10ad7aaccb"
+        },
+        {
+          "path": "LICENSE",
+          "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+        },
+        {
+          "path": "MODEL_CARD.md",
+          "sha256": "08116c98e80be37f807ca1a3b0136ac7a9be1497967a6503848bbb85e56d51f3"
+        },
+        {
+          "path": "README.md",
+          "sha256": "989697c18147c7c4599a1f26144f4ce64c0a00f3f98e4ef22a358a2849c773a9"
+        },
+        {
+          "path": "albert-binary-text-classification-movie-reviews.ipynb",
+          "sha256": "ff6d49ef8705272338d3f503ecf6be17c891e1cb7209d61a933e065da25f603f"
+        },
+        {
+          "path": "requirements.txt",
+          "sha256": "93f86cbdab8f5d3418ae661b9559bd2cbd537cd87236130dfefed665846bfdf8"
+        }
+      ]
+    },
+    {
+      "repository": "neal-vazquez/albert-binary-text-classification-hate-speech",
+      "commit": "202a8e45a22be6e0024a8a18722a3ba6a846a958",
+      "destination": "consulting-career/academic/berkeley/albert-hate-speech",
+      "files": [
+        {
+          "path": "Hate_Speech_Classification_Albert.ipynb",
+          "sha256": "f42788b7684922dbbb703306862ce5acb2590c4330f131d34801d622794ec691"
+        },
+        {
+          "path": "Hate_Speech_Classification_Albert.pdf",
+          "sha256": "3cba9b04dea8f574b2b25d7121bc9abd8a303375b086dc9cf0ccd19479a78409"
+        },
+        {
+          "path": "README.md",
+          "sha256": "ea71b51381d4c5826d9c323957b9a2cc0f978d6be33ae6187109bf788b83975d"
+        }
+      ]
+    }
+  ]
+}
