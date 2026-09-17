@@ -1,6 +1,6 @@
 # SQL portfolio: operational analytics and data integrity
 
-[![SQL checks](https://github.com/neal-vazquez/neal-vazquez-site-public/actions/workflows/sql.yml/badge.svg)](https://github.com/neal-vazquez/neal-vazquez-site-public/actions/workflows/sql.yml)
+[![SQL checks](https://github.com/neal-vazquez/nealvazquez-public/actions/workflows/sql.yml/badge.svg)](https://github.com/neal-vazquez/nealvazquez-public/actions/workflows/sql.yml)
 
 **Runnable SQL case studies by Neal Vazquez: website measurement, data integrity, and contact-center operations.**
 
@@ -29,8 +29,8 @@ The demo uses entirely synthetic data. It runs in memory with Python's standard 
 ## Start here
 
 ```bash
-git clone https://github.com/neal-vazquez/neal-vazquez-site-public.git
-cd neal-vazquez-site-public/consulting-career/sql-and-analytics
+git clone https://github.com/neal-vazquez/nealvazquez-public.git
+cd nealvazquez-public/business/consulting-career/sql-and-analytics
 python scripts/demo.py
 python scripts/demo.py --check
 python scripts/contact_center.py

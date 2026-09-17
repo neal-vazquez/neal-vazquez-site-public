@@ -44,7 +44,7 @@ def build():
 
         Project direction: Neal Vazquez. Notebook, SQL and checks developed with
         ChatGPT assistance. This notebook extends the
-        [public SQL case study](https://github.com/neal-vazquez/neal-vazquez-site-public/tree/main/examples/contact-center).
+        [public SQL case study](https://github.com/neal-vazquez/nealvazquez-public/tree/main/business/consulting-career/sql-and-analytics/examples/contact-center).
     ''')
     add('markdown', '''
         ### 1. Define the question before the query
@@ -245,7 +245,7 @@ def build():
         that handled each contact.
 
         Source, boundary tests, and reproducible build:
-        [neal-vazquez-site-public](https://github.com/neal-vazquez/neal-vazquez-site-public).
+        [nealvazquez-public](https://github.com/neal-vazquez/nealvazquez-public).
         The notebook embeds the repository's synthetic fixture and SQL so it
         works offline. Its source-sync test prevents the two versions drifting.
     ''')
