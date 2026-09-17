@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "repository": "https://github.com/neal-vazquez/neal-vazquez-site-public",
+  "repository": "https://github.com/neal-vazquez/nealvazquez-public",
   "updatedAt": "2026-09-17",
   "collections": [
     {
@@ -29,7 +29,7 @@
           "id": "qwa",
           "title": "Questions Worth Asking Lab",
           "path": "business/writing",
-          "source": "https://github.com/neal-vazquez/questions-worth-asking-lab"
+          "source": "https://github.com/neal-vazquez/nealvazquez-public-business-writing"
         }
       ]
     },
